@@ -370,5 +370,74 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "ROD BR. 316 KM 12 - CONDOMINIO CITTÀ MARIS",
+      "number": "2184",
+      "optionalAddress": "BLOCO 7 APTO 401",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "AV. Santos Dumont",
+      "number": "100",
+      "optionalAddress": "Ap 102",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "bread"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "Rua Xyz",
+      "number": "120",
+      "optionalAddress": "",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp"
+        },
+        {
+          "quantity": 1,
+          "menuId": "espreso"
+        },
+        {
+          "quantity": 1,
+          "menuId": "starb"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "address": "ROD BR 316 KM 12",
+      "number": "2184",
+      "optionalAddress": "BLOCO 7 APTO 401",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 4,
+          "menuId": "starb"
+        }
+      ],
+      "id": 4
+    }
+  ]
 }
