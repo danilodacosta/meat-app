@@ -12,8 +12,8 @@ import 'rxjs/add/operator/catch';
 export class RestaurantsService {
   constructor(private http: Http) { }
 
-  public restaurants(): Observable<Restaurant[]> {
-    return this.http.get(`${MEAT_API}/restaurants`)
+  public restaurants(search?: string): Observable<Restaurant[]> {
+    return this.http.get(`${MEAT_API}/restaurants`, {params: {q: search}})
       .map(response => response.json())
       .catch(ErrorHandler.handleError);
   }
