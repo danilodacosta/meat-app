@@ -26,6 +26,9 @@
     <div class="col-sm-6 col-xs-12" *ngFor="let restaurant of restaurants">
       <mt-restaurant [restaurant]="restaurant"></mt-restaurant>
     </div>
+    <div class="col-xs-12" *ngIf="restaurants?.length === 0">
+      <p class="lead text-center">Não foram encontrados itens para a sua busca.</p>
+    </div>
   </div>
 </section>
 
