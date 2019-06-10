@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var jwt = require("jsonwebtoken");
+var api_config_1 = require("./api.config");
 exports.handleAuthorization = function (req, resp, next) {
     var token = extractToken(req);
     if (!token) {
@@ -8,8 +9,8 @@ exports.handleAuthorization = function (req, resp, next) {
         resp.status(401).json({ message: 'Você precisa se autenticar.' });
     }
     else {
-        jwt.verify(token, 'meat-api-password', function (error, decode) {
-            if (decode) {
+        jwt.verify(token, api_config_1.apiConfig.secret, function (error, decoded) {
+            if (decoded) {
                 next();
             }
             else {
@@ -23,8 +24,10 @@ function extractToken(req) {
     if (req.headers && req.headers.authorization) {
         // Autorization: Baerer zzz.zzz.zzz
         var parts = req.headers.authorization.split(' ');
+        console.log(parts[0]);
         if (parts.length === 2 && parts[0] === 'Bearer') {
             token = parts[1];
+            console.log('token : ' + token);
         }
     }
     return token;

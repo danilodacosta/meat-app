@@ -1,3 +1,4 @@
+import { LoginComponent } from './security/login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
@@ -9,6 +10,7 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'restaurants', component: RestaurantsComponent },
   { path: 'restaurants/:id', component: RestaurantDetailComponent,
       children: [
@@ -20,4 +22,5 @@ export const ROUTES: Routes = [
   { path: 'order-summary', component: OrderSummaryComponent },
   { path: 'about', loadChildren: './about/about.module#AboutModule' },
   { path: '**', component: NotFoundComponent }
+
 ];
