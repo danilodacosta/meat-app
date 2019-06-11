@@ -24,10 +24,8 @@ function extractToken(req) {
     if (req.headers && req.headers.authorization) {
         // Autorization: Baerer zzz.zzz.zzz
         var parts = req.headers.authorization.split(' ');
-        console.log(parts[0]);
         if (parts.length === 2 && parts[0] === 'Bearer') {
             token = parts[1];
-            console.log('token : ' + token);
         }
     }
     return token;
