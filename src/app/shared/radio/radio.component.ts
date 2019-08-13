@@ -18,6 +18,7 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
   value: any;
 
   onChange: any;
+  onTouch: any;
 
   constructor() { }
 
@@ -26,6 +27,7 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
   setValue(value: any): void {
     this.value = value;
     this.onChange(this.value);
+    this.onTouch(this.value)
   }
 
   writeValue(obj: any): void {
@@ -35,7 +37,10 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {}
+    registerOnTouched(fn: any) {
+    this.onTouch = fn
+    }
+
   setDisabledState?(isDisabled: boolean): void {}
 
 }
